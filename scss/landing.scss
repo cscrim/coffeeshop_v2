@@ -1,0 +1,439 @@
+@use './partials/global' as *;
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.nav-bar {
+    background-color: #FFF0ED;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    padding: 0rem 0.5rem 0rem 1.25rem;
+    font-size: 1.3125rem;
+    color: $primary-bg;
+}
+
+.nav-links {
+    font-size: 1.3125rem;
+    list-style-type: none;
+    display: inline-block;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+}
+
+.nav-links a.shop-now {
+    color: $accent-color;
+}
+
+.nav {
+    @include flex-center(row, space-between, center);
+    width: 100%;
+}
+
+.nav-bar__left-container {
+    @include flex-center(row, center, center);
+}
+
+
+.nav-bar__right-container {
+    display: flex;
+}
+
+h1 {
+    font-size: 3.75rem;
+    font-weight: 300;
+    margin: 0;
+    color: $primary-bg;
+}
+
+    
+
+.heading-image-box {
+    background-color: #FFF0ED;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+
+}
+
+.heading-text {
+    max-width: 22rem;
+    margin: 0 10rem 0 5rem;
+}
+
+.heading-image {
+    background-image: url('../assets/images/coffeebeans-hero.png');
+    width: 28%;
+    height: 34.375rem;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: 6rem;
+
+}
+
+p {
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin: 2rem 0;
+}
+
+.button {
+    background-color: $accent-color;
+    color: white;
+    border: none;
+    font-size: 1.3125rem;
+    font-weight: 400;
+    width: 11.25rem;
+    padding: 1.25rem 1.25rem;
+    cursor: pointer;
+
+}
+
+.button-wrapper {
+    display: inline-block;
+    position: relative;
+    
+}
+
+.button-border {
+    position: absolute;
+    border: 2px solid black;
+    top: -5px;
+    left: -5px;
+    width: 11.25rem;
+    height: 100%;
+    transition: top 0.2s ease, left 0.2s ease;
+
+}
+
+
+.button-link:hover .button {
+    cursor: pointer;
+}
+
+.button:active + .button, .button:focus + .button {
+    transform: translate(5px, 5px);
+}
+
+/* I have no idea why this button is not animating :(
+was the border box being a sibling the issue? */
+
+
+.button-text {
+    position: relative;
+    top: -5px;
+    left: -5px;
+}
+
+h2 {
+    font-size: 3.75rem;
+    font-weight: 300;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 2.0625rem;
+    font-weight: 300;
+    margin-top: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+
+.logo {
+    width: 3.125rem;
+    display:inline-block;
+    padding-right: 0;
+    margin-right: 0;
+}
+
+h2 a {
+    font-size: 2.0625rem;
+    font-weight: 300;
+}
+
+
+.product-heading {
+    display: block;
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.discount-bar__code {
+    font-weight: bold;
+}
+
+.hours-open__bold {
+    font-weight: bold;
+}
+
+.hours-open {
+    display: block;
+    margin: 0;
+}
+
+.address {
+    display: block;
+    margin: 0;
+}
+
+.social img {
+    width: 3.125rem;
+}
+
+.nav-bar img {
+    width: 3.125rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+.product-section {
+    background-color: #F7F7F7;
+}
+
+.discount-bar {
+    font-size: 2.8125rem;
+    font-weight: 400;
+    background-color: $primary-bg;
+    color: white;
+    margin-top: 0;
+    width: 90%;
+    text-align: center;
+    margin: 12rem 0;
+    padding: 3rem 0;
+    animation: flash 2.5s linear infinite;
+}
+
+@keyframes flash {
+    0%, 100% {
+        background-color: $primary-bg;
+    }
+    50% {
+        background-color: $accent-color;
+    }
+}
+
+.nav-bar .nav-bar__name {
+    font-size: 2.7rem;
+    padding-left: 0;
+}
+
+.nav-bar h2 {
+    margin:0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20.625rem;
+    height: 27.5rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 .3125rem .5625rem -0.0625rem;
+    text-align: center;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-bottom: 3rem;
+
+}
+
+.card__image {
+    height: auto;
+}
+
+.card__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex: 2;
+
+}
+
+.card-content {
+    background-color: #FFF0ED;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.card-content__price {
+    color: #5BACC3;
+}
+
+.card-content__price p {
+    font-size: 2.0625rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-right: 0.8rem;
+}
+
+.card-content__subtitle {
+    margin: 0;
+    color: #909090;
+    padding-left: 0.5rem;
+}
+
+.card-content__title {
+    margin: 0;
+    text-align: left;
+    padding-left: 0.5rem;
+}
+
+.card-content__title h3 {
+    margin: 0;
+    padding-left: 0.5rem;
+}
+
+.discount-container {
+    width: 100%;
+}
+
+.learn-more__container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 6rem;
+    
+}
+
+.discount-container {
+    display:flex;
+    justify-content: center;  
+    align-items: center;
+}
+
+
+.learn-more__description {
+    width: 28rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.description__logos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.description__logos img {
+    width: 50px;
+}
+
+.description__button {
+    margin-top: 2rem;
+}
+
+.learn-more__image {
+    position: relative;
+    margin-top: 20px;
+}
+
+.overlay-image {
+    position: absolute;
+    height: 17.5rem;
+    top: 46%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.learn-more__image:hover .overlay-image {
+    animation: rotate 2s linear infinite;
+}
+
+.border-container {
+    position: relative;
+}
+
+.funky-background {
+    width: 25rem;
+}
+
+.image-border {
+    border: 5px solid $accent-color;
+    background: transparent;
+    height: 25rem;
+    width: 25rem;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+}
+
+.footer {
+    background-color: #FFF0ED;
+    display: flex;
+    width: 100%;
+    overflow:  hidden;
+    position: relative;
+}
+
+.footer-beans {
+    width: 120px;
+    opacity: 25%;
+    position: absolute;
+    left: -40px;
+    padding-top: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 8rem;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.footer-beans2 {
+    width: 120px;
+    opacity: 25%;
+    position: absolute;
+    right: -50px;
+    bottom: 20px;
+}
+
+.logo-container {
+    display: flex;
+}
